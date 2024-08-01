@@ -21,6 +21,7 @@
             this.app = express();
             this.port = process.env.PORT;
             this.calculatorPath='/api/calculator'      
+            this.palindromePath='/api/palindrome'      
     
             this.server = http.createServer( this.app );
 
@@ -44,6 +45,7 @@
         //rutas de la aplicación
         routes(){
             this.app.use(this.calculatorPath,  require ('../Calculator/calculatorRoutes'));
+            this.app.use(this.palindromePath,  require ('../Palindrome/palindromeRoutes'));
         }
         
         //se levanta el servidor
